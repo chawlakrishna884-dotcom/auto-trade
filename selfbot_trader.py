@@ -15,7 +15,8 @@ logging.basicConfig(
 )
 log = logging.getLogger("trade-selfbot")
 
-USER_TOKEN = os.getenv("USER_TOKEN")
+USER_TOKEN = os.environ["USER_TOKEN"]
+# Raises KeyError if missing
 CHANNEL_ID = int(os.getenv("CHANNEL_ID", "0") or 0)
 INTERVAL_SECONDS = int(os.getenv("INTERVAL_SECONDS", "300"))
 MESSAGE = os.getenv("MESSAGE", "WTS royal package, dm me")
